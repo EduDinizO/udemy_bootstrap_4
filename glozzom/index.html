@@ -13,8 +13,46 @@
 	<title>Bootstrap Theme</title>
 </head>
 
-<body>
-	<!-- START HERE -->
+<body data-spy="scroll" data-target="#main-nav" id="home">
+	<!-- NAVBAR -->
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+		<div class="container">
+			<a href="index.html" class="navbar-brand">Glozzom</a>
+			<button class="navbar-toggler" data-toggle="collapse" data-target="navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a href="index.html" class="nav-link px-3">
+							Home
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="about.html" class="nav-link px-3">
+							About Us
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="services.html" class="nav-link px-3">
+							Services
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="blog.html" class="nav-link px-3">
+							Blog
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="contact.html" class="nav-link pl-3">
+							Contact
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- CAROUSEL -->
 
 
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -27,6 +65,27 @@
 	<script>
 		// Get the current year for the copyright
 		$('#year').text(new Date().getFullYear());
+		// Init ScrollSpy
+		$('body').scrollspy({
+			target: '#main-nav'
+		});
+		// ADD SMOOTH SCROLLING
+		$('#main-nav a').on('click', function (e) {
+			// Check for a hash value
+			if (this.hash !== '') {
+				// Prevent default behavior
+				e.preventDefault();
+				// Store hash
+				const hash = this.hash;
+				// Animate smooth scroll
+				$('html, body').animate({
+					scrollTop: $(hash).offset().top
+				}, 900, function () {
+					// Add hash to URL after scroll
+					window.location.hash = hash;
+				});
+			}
+		});
 	</script>
 </body>
 
