@@ -185,6 +185,87 @@
 			</div>
 		</div>
 	</div>
+	<!-- PHOTO GALLERY -->
+	<section id="gallery" class="py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="text-center">Photo Gallery</h1>
+					<p class="text-center">Check out our photos</p>
+				</div>
+			</div>
+			<div class="row mb-4">
+				<div class="col-md-4">
+					<a href="https://source.unsplash.com/random/560x560" data-toggle="lightbox" data-gallery="img-gallery" data-height="560"
+					    data-width="560">
+						<img src="https://source.unsplash.com/random/560x560" alt="Photo" class="img-fluid">
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="https://source.unsplash.com/random/561x561" data-toggle="lightbox" data-gallery="img-gallery" data-height="561"
+					    data-width="561">
+						<img src="https://source.unsplash.com/random/561x561" alt="Photo" class="img-fluid">
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="https://source.unsplash.com/random/559x559" data-toggle="lightbox" data-gallery="img-gallery" data-height="559"
+					    data-width="559">
+						<img src="https://source.unsplash.com/random/559x559" alt="Photo" class="img-fluid">
+					</a>
+				</div>
+			</div>
+
+			<div class="row mb-4">
+				<div class="col-md-4">
+					<a href="https://source.unsplash.com/random/562x562" data-toggle="lightbox" data-gallery="img-gallery" data-height="562"
+					    data-width="562">
+						<img src="https://source.unsplash.com/random/562x562" alt="Photo" class="img-fluid">
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="https://source.unsplash.com/random/563x563" data-toggle="lightbox" data-gallery="img-gallery" data-height="563"
+					    data-width="563">
+						<img src="https://source.unsplash.com/random/563x563" alt="Photo" class="img-fluid">
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="https://source.unsplash.com/random/558x558" data-toggle="lightbox" data-gallery="img-gallery" data-height="558"
+					    data-width="558">
+						<img src="https://source.unsplash.com/random/558x558" alt="Photo" class="img-fluid">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- NEWSLETTER -->
+	<section id="newsletter" class="text-center p-5 bg-dark text-white">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h1>Sign Up For Our Newsletter</h1>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro aut velit alias expedita placeat mollitia reprehenderit
+						ad quis illo maxime!</p>
+					<form class="form-inline justify-content-center">
+						<input type="text" class="form-control mb-2 mr-2" placeholder="Enter Name">
+						<input type="email" class="form-control mb-2 mr-2" placeholder="Enter Email">
+						<button class="btn btn-primary mb-2">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- FOOTER -->
+	<footer id="main-footer" class="text-center p-4">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<p>Copyright &copy;
+						<span id="year"></span> Glozzom
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	    crossorigin="anonymous"></script>
@@ -235,6 +316,12 @@
 					$(theModal + ' iframe').attr('src', videoSRC);
 				});
 			});
+		});
+		// EKKO LIGHT BOX 
+		// Ekko-Lightbox
+		$(document).on('click', '[data-toggle="lightbox"]', function (e) {
+			e.preventDefault();
+			$(this).ekkoLightbox();
 		});
 	</script>
 </body>
